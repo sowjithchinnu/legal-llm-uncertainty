@@ -1,10 +1,17 @@
 """Run the controlled multi-question uncertainty experiment."""
 
 import argparse
+import sys
 from pathlib import Path
 from typing import Any
 
 from groq import Groq
+
+# Keep direct execution (`python experiments/...py`) consistent with
+# module execution from the repository root.
+REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
+if str(REPOSITORY_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPOSITORY_ROOT))
 
 from src.generation.batch_generate import (
     DEFAULT_DATASET_PATH,
