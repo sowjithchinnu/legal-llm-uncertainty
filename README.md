@@ -48,3 +48,17 @@ Run the test suite with:
 ```bash
 .venv/bin/python -m unittest discover -s tests
 ```
+
+## Manual Objective 2 annotation
+
+Review the prepared evaluation one question at a time with:
+
+```bash
+.venv/bin/python -m experiments.annotate_objective2
+```
+
+The prepared input is `data/processed/objective2_manual_evaluation.json`. The
+annotator writes to `data/processed/objective2_annotations.json`, leaving the
+input unchanged. It resumes from the first response without an annotation and
+atomically saves after every response. Use alternate files with
+`--prepared-path` and `--output-path`.
